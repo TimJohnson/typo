@@ -417,7 +417,7 @@ class Article < Content
   end
                             
 #Merge
-def merge_with(merge_article_id
+def merge_with(merge_article_id)
     merge_article = Article.find_by_id(merge_article_id)
 
    if !self.body
