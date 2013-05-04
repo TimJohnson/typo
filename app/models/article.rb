@@ -415,7 +415,27 @@ class Article < Content
   def access_by?(user)
     user.admin? || user_id == user.id
   end
+                            
+#Merge
+def merge_with(merge_article_id
+    merge_article = Article.find_by_id(merge_article_id)
 
+   if !self.body
+        self.body = merge_article.body
+    elsif merge_article.body
+        self.body += merge_article.body
+    end
+                            
+    # move from merge_article to edit_article
+    self.comments << merge_article.comments
+    self.save
+                            
+    merge_article = Article.find_by_id(merge_article_id)
+    merge_article.destroy
+end
+                            
+                            
+                            
   protected
 
   def set_published_at
