@@ -6,7 +6,7 @@
 <% end %>
 
 <% if @article.id %>
-    <%= form_tag(form_action, :id => form_action[:id]) do %>
+    <%= form_tag :controller => 'admin/content', :action => 'merge' do %>
         <h3>Merge Articles</h3>
         Article ID <%= text_field_tag 'merge_with' %>
         <br>
