@@ -6,11 +6,11 @@ Feature: Merge Articles
   Background:
     Given the blog is set up
     And I am logged into the admin panel
-    And the following contents exist:
-
+    And the following articles exist:
       | title        | author  | body        | published | id |
       | First        | admin   | first       | t         | 1  |
       | Hello World! | admin   | hi          | u         | 2  |
+
     Given I am logged into the admin panel
     And I follow "First"
     And I fill in "merge_with" with "2"
